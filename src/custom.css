@@ -4,12 +4,30 @@
   }
 
 .angowave-bg {
-    background-image: url("./img/angowave_web_bg.png");
+    background-image: url("./img/angowave_web_whitetexts.png");
     background-position: center;
     background-size: auto;
     background-repeat: no-repeat;
 }
 
 .wallet-adapter-button-trigger {
-    background-color: #FFA0FD;
+    background-color: rgba(255, 255, 255, 0.87);
+    color: black
+}
+
+.wallet-adapter-button:not([disabled]):hover {
+    background-color: #9a9fac;
+}
+
+.MuiDivider-root {
+    border-color: rgba(255, 255, 255, 0.308)
+}
+
+.MuiCard-root {
+    background-color: rgba(255, 255, 255, 0.11);
+    color: rgba(255, 255, 255, 0.87)
+}
+
+body {
+    color: rgba(255, 255, 255, 0.87)
 }

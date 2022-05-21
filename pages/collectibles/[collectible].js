@@ -83,7 +83,7 @@ const Show = () => {
 
   return (
     <Layout>
-      <a href='/'><Typography variant='h6'>{'< back'}</Typography></a>
+      <a href='/'><Typography variant='h6' color="white">{'< back'}</Typography></a>
       {thisCollectible ? renderDetails() : <CircularProgress />}
     </Layout>
   )

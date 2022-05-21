@@ -6,7 +6,7 @@ const AttributesGrid = ({ attributes }) => {
         <Grid item xs={4} key={index}>
             <Card sx={{ height: '100%' }}>
                 <CardContent>
-                <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                <Typography sx={{ fontSize: 14 }} color="gray" gutterBottom>
                     {attribute.trait_type}
                 </Typography>
                 <Typography variant="h6" component="div">
