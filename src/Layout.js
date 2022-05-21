@@ -57,7 +57,7 @@ const Layout = (props) => {
         return (
           <Container maxWidth="lg">
             <Typography variant="h1" component="h1" gutterBottom fontWeight="bold" marginBottom="0px">
-              Angohub
+              AngoHub
             </Typography>
             <Navbar />
             <Box sx={{ my: 4 }}>
