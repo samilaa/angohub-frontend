@@ -19,7 +19,7 @@ const Navbar = () => {
                     </Link>
                 </Typography>
                 <Typography variant="h5" color="gray" fontWeight="bold" sx={{ flexGrow: 2 }} className='unicorn-cursor'>
-                    Merch
+                    Shop
                 </Typography>
                 <WalletMultiButton />
             </Toolbar>
