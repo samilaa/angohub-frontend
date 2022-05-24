@@ -45,12 +45,12 @@ const Show = () => {
     <div>
       <Grid item xs={12} marginBottom='10px'>
         <Card>
-          <Button href={`https://fbxstorageaccount.blob.core.windows.net/stlfiles/${thisCollectible.data.name.substr(thisCollectible.data.name.length - 4)}.stl`} fullWidth><CloudDownload /> Download STL file</Button>
+          <Button href={`https://fbxstorageaccount.blob.core.windows.net/stlfiles/${thisCollectible.data.name.substr(thisCollectible.data.name.indexOf('#') + 1)}.stl`} fullWidth><CloudDownload /> Download STL file</Button>
         </Card>
       </Grid>
       <Grid item xs={12} marginBottom='10px'>
         <Card>
-          <Button href={`https://fbxstorageaccount.blob.core.windows.net/fbxfiles/${thisCollectible.data.name.substr(thisCollectible.data.name.length - 4)}.fbx`} fullWidth><CloudDownload /> Download FBX file</Button>
+          <Button href={`https://fbxstorageaccount.blob.core.windows.net/fbxfiles/${thisCollectible.data.name.substr(thisCollectible.data.name.indexOf('#') + 1)}.fbx`} fullWidth><CloudDownload /> Download FBX file</Button>
         </Card>
       </Grid>
       <Grid item xs={12} marginBottom='10px'>
@@ -98,7 +98,7 @@ const Show = () => {
 
   return (
     <Layout>
-      <Link href='/'><Typography variant='h6' color="white">{'< back'}</Typography></Link>
+      <Typography variant='h6' color="white"><Link href='/'>{'< back'}</Link></Typography>
       <TutorialModal open={modalOpen} handleClose={handleModalClose} />
       {thisCollectible ? renderDetails() : <CircularProgress />}
     </Layout>
