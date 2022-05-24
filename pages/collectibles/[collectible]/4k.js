@@ -1,4 +1,4 @@
-import { CircularProgress, Typography } from '@mui/material'
+import { CircularProgress, Link, Typography } from '@mui/material'
 import { useConnection, useWallet } from '@solana/wallet-adapter-react'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
@@ -46,7 +46,7 @@ const Show = () => {
 
   return (
     <Layout>
-      <a href={mint ? `/collectibles/${mint}` : '/'}><Typography variant='h6'>{'< back'}</Typography></a>
+      <Link href={mint ? `/collectibles/${mint}` : '/'}><Typography variant='h6'>{'< back'}</Typography></Link>
       {angoNumber ? renderImage() : <CircularProgress />}
     </Layout>
   )

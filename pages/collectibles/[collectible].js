@@ -3,9 +3,10 @@ import Layout from '../../src/Layout'
 import { useRouter } from 'next/router'
 import { fetchAngomonData, fetchOrGetFromSessionStorage, fetchPlanetData } from '../../src/fetchNftData'
 import { useConnection, useWallet } from '@solana/wallet-adapter-react'
-import { Button, Card, CircularProgress, Grid, Typography } from '@mui/material'
-import { CloudDownload, FourK } from '@mui/icons-material'
+import { Button, Card, CircularProgress, Grid, Link, Typography } from '@mui/material'
+import { CloudDownload, FourK, Help } from '@mui/icons-material'
 import AttributesGrid from '../../src/AttributesGrid'
+import TutorialModal from '../../src/TutorialModal'
 
 const Show = () => {
   const router = useRouter()
@@ -17,6 +18,10 @@ const Show = () => {
   const [userPlanets, setUserPlanets] = useState([])
   const [thisCollectible, setThisCollectible] = useState(null)
   const [loading, setLoading] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false)
+
+  const handleModalOpen = () => setModalOpen(true)
+  const handleModalClose = () => setModalOpen(false)
 
   useEffect(() => {
     if (!publicKey) {
@@ -48,9 +53,19 @@ const Show = () => {
           <Button href={`https://fbxstorageaccount.blob.core.windows.net/fbxfiles/${thisCollectible.data.name.substr(thisCollectible.data.name.length - 4)}.fbx`} fullWidth><CloudDownload /> Download FBX file</Button>
         </Card>
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={12} marginBottom='10px'>
+        <Card>
+          <Button href={'https://fbxstorageaccount.blob.core.windows.net/angostudio/Angomon_studio.zip'} fullWidth><CloudDownload /> Download Studio and Textures</Button>
+        </Card>
+      </Grid>
+      <Grid item xs={12} marginBottom='10px'>
         <Card>
           <Button href={`/collectibles/${thisCollectible.mint}/4k`} fullWidth><FourK /> View in 4K</Button>
+        </Card>
+      </Grid>
+      <Grid item xs={12}>
+        <Card>
+          <Button onClick={handleModalOpen} fullWidth><Help /> How to use</Button>
         </Card>
       </Grid>
     </div>
@@ -83,7 +98,8 @@ const Show = () => {
 
   return (
     <Layout>
-      <a href='/'><Typography variant='h6' color="white">{'< back'}</Typography></a>
+      <Link href='/'><Typography variant='h6' color="white">{'< back'}</Typography></Link>
+      <TutorialModal open={modalOpen} handleClose={handleModalClose} />
       {thisCollectible ? renderDetails() : <CircularProgress />}
     </Layout>
   )

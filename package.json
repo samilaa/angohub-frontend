@@ -29,7 +29,8 @@
     "next": "latest",
     "prop-types": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-youtube": "^9.0.1"
   },
   "devDependencies": {
     "eslint": "^8.15.0",
