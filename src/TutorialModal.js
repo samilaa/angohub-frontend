@@ -38,7 +38,7 @@ const TutorialModal = ({ open, handleClose }) => {
       <Typography id="modal-modal-title" variant="h6" component="h2">
         How to use 3D files
       </Typography>
-      <YouTube videoId='uKzLmNfW0P8' opts={opts} />
+      <YouTube videoId='JaI4kxLwQCg' opts={opts} />
     </Box>
   </Modal>
   )
