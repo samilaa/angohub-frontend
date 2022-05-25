@@ -55,7 +55,7 @@ const Show = () => {
       </Grid>
       <Grid item xs={12} marginBottom='10px'>
         <Card>
-          <Button href={'https://fbxstorageaccount.blob.core.windows.net/angostudio/Angomon_studio.zip'} fullWidth><CloudDownload /> Download Studio and Textures</Button>
+          <Button href={'https://fbxstorageaccount.blob.core.windows.net/angostudio/AngoStudio_and_textures.zip'} fullWidth><CloudDownload /> Download Studio and Textures</Button>
         </Card>
       </Grid>
       <Grid item xs={12} marginBottom='10px'>
