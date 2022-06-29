@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import Layout from '../../src/Layout'
 import { useRouter } from 'next/router'
-import { fetchAngomonData, fetchOrGetFromSessionStorage, fetchPlanetData } from '../../src/fetchNftData'
+import { fetchOrGetFromSessionStorage } from '../../src/fetchNftData'
 import { useConnection, useWallet } from '@solana/wallet-adapter-react'
 import { Button, Card, CircularProgress, Grid, Link, Typography } from '@mui/material'
-import { CloudDownload, FourK, Help } from '@mui/icons-material'
+import { CloudDownload, FourK, Help, Landscape, PhotoCamera } from '@mui/icons-material'
 import AttributesGrid from '../../src/AttributesGrid'
 import TutorialModal from '../../src/TutorialModal'
 
@@ -60,12 +60,22 @@ const Show = () => {
       </Grid>
       <Grid item xs={12} marginBottom='10px'>
         <Card>
+          <Button onClick={handleModalOpen} fullWidth><Help /> How to use</Button>
+        </Card>
+      </Grid>
+      <Grid item xs={12} marginBottom='10px'>
+        <Card>
           <Button href={`/collectibles/${thisCollectible.mint}/4k`} fullWidth><FourK /> View in 4K</Button>
+        </Card>
+      </Grid>
+      <Grid item xs={12} marginBottom='10px'>
+        <Card>
+          <Button href={`/collectibles/${thisCollectible.mint}/pfp`} fullWidth><PhotoCamera /> Get PFP</Button>
         </Card>
       </Grid>
       <Grid item xs={12}>
         <Card>
-          <Button onClick={handleModalOpen} fullWidth><Help /> How to use</Button>
+          <Button href={`/collectibles/${thisCollectible.mint}/twitterbanner`} fullWidth><Landscape /> Get Twitter Banner</Button>
         </Card>
       </Grid>
     </div>

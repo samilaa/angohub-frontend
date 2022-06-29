@@ -2,7 +2,7 @@ import { CircularProgress, Link, Typography } from '@mui/material'
 import { useConnection, useWallet } from '@solana/wallet-adapter-react'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
-import { fetchAngomonData, fetchOrGetFromSessionStorage, fetchPlanetData } from '../../../src/fetchNftData'
+import { fetchOrGetFromSessionStorage } from '../../../src/fetchNftData'
 import Layout from '../../../src/Layout'
 
 const Show = () => {
